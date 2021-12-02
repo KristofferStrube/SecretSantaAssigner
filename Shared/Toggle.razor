@@ -1,0 +1,25 @@
+﻿<div class="col col-12">
+    <br />
+    @if (!Flipped)
+    {
+        <button class="btn btn-warning btn-lg" style="width:100%;" @onclick="() => Flipped = true">
+            @Front
+        </button>
+    }
+    else
+    {
+        <button class="btn btn-success btn-lg" style="width:100%;" @onclick="() => Flipped = false">
+            @Back
+        </button>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public string Front { get; set; }
+
+    [Parameter]
+    public string Back { get; set; }
+
+    protected bool Flipped { get; set; }
+}
